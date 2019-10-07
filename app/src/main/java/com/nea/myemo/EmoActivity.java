@@ -2,43 +2,45 @@ package com.nea.myemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class EmoActivity extends AppCompatActivity {
-    private ImageView container;
-    private AnimationDrawable animationDrawable;
+    @BindView( R.id.emojisEditText )
+    TextView mLocationTextView;
+    @BindView ( R.id.listView )
+    ListView mListView;
+    private String[] emojis = new String[] {"Smiley", "Wink", "Wink with tongue out", "Love eyes", "Hi5 hand", "Love eyes wink"};
+    private String[] meaning = new String[] {"Express the the smiling effect", "Crushing effect best emoji", "Express love especially when you fall in love", "A simple salutation hi5", "Expess that in love happy kafeeling"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splashscreen);
-        container = findViewById(R.id.iv_icons);
-        container.setBackgroundResource(R.drawable.splash_animation);
-        animationDrawable = (AnimationDrawable) container.getBackground();
-    }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        animationDrawable.start();
-        checkAnimationStatus(150, animationDrawable);
-    }
-    /**
-     * check the animation status recursively, keep the animation until it reach the last frame.
-     *
-     * @param time              period of animation
-     * @param animationDrawable animation list
-     */
-    private void checkAnimationStatus(final int time, final AnimationDrawable animationDrawable) {
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
+        setContentView(R.layout.activity_emo);
+        ButterKnife.bind ( this );
+        MyEmojisArrayAdapter adapter = new MyEmojisArrayAdapter(this, android.R.layout.simple_list_item_1, emojis, meaning); // must match constructor!
+        mListView.setAdapter ( adapter );
+
+        mListView.setOnItemClickListener ( new AdapterView.OnItemClickListener () {
             @Override
-            public void run() {
-                if (animationDrawable.getCurrent() != animationDrawable.getFrame(animationDrawable.getNumberOfFrames() - 1))
-                    checkAnimationStatus(time, animationDrawable);
-                else finish();
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String restaurant = ((TextView)view).getText().toString();
+                Toast.makeText(EmoActivity.this, restaurant, Toast.LENGTH_LONG).show();
             }
-        }, time);
+        });
+        Intent intent = getIntent();
+        String location = intent.getStringExtra("location");
+        mLocationTextView.setText("Here is a list of all Emojis: " + emojis);
     }
 }
