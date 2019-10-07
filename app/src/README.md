@@ -15,7 +15,7 @@ An application that one is able to get meaning of emojis.
  - Run the linter (ruby lint.rb').
  - Push your branch (git push origin my-new-feature)
  - Create a new Pull Request
- 
+
 ## Known problems:
  - The Listing feature where the saved weather details are supposed to be listed down is crashing the app. the dependency upgrades that allow the use of firebase auth and firebaseUI do not implement the use of firebase-recyclerview and firebase-adapter to fetch and display the items. Work in progeress.
 
