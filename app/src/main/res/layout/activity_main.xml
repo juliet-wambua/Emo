@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
         android:id="@+id/imageView"
-        android:src="@drawable/backgroundemo"
-        android:scaleType="centerCrop" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/backgroundemo" />
 
 
     <TextView
@@ -31,13 +31,13 @@
         android:layout_centerHorizontal="true"
         android:background="@color/colorPrimaryText"
         android:text="Find Emojis Meaning"
-        android:textColor="@color/colorTextIcons" />
+        android:textColor="@color/colorPrimary" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/locationEditText"
-        android:background="@color/colorTextIcons"
+        android:id="@+id/emojisEditText"
+        android:background="@color/colorPrimary"
         android:layout_above="@+id/findEmojisButton"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
