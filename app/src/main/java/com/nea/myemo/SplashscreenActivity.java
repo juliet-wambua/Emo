@@ -1,15 +1,13 @@
 package com.nea.myemo;
 
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class SplashScreenActivity extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 6000;
+public class SplashscreenActivity extends AppCompatActivity {
     private ImageView container;
     private AnimationDrawable animationDrawable;
     @Override
