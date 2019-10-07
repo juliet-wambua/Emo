@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Emojis created so far "
-        android:id="@+id/locationTextView"
+        android:id="@+id/emojisTextView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -17,14 +17,14 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/imageView"
-        android:src="@drawable/smile"
+        android:src="@color/colorPrimary"
         android:scaleType="centerCrop" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
-        android:layout_above="@+id/locationTextView"
+        android:layout_above="@+id/emojisTextView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

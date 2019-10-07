@@ -13,10 +13,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class EmoActivity extends AppCompatActivity {
-    @BindView( R.id.emojisEditText )
-    TextView mEmojiTextView;
-    @BindView ( R.id.listView )
-    ListView mListView;
+    @BindView( R.id.emojisTextView) TextView mEmojiTextView;
+    @BindView ( R.id.listView ) ListView mListView;
     private String[] emojis = new String[] {"Smiley", "Wink", "Wink with tongue out", "Love eyes", "Hi5 hand", "Love eyes wink"};
     private String[] meaning = new String[] {"Express the the smiling effect", "Crushing effect best emoji", "Express love especially when you fall in love", "A simple salutation hi5", "Expess that in love happy kafeeling"};
 
@@ -25,6 +23,7 @@ public class EmoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emo);
         ButterKnife.bind ( this );
+
         MyEmojisArrayAdapter adapter = new MyEmojisArrayAdapter(this, android.R.layout.simple_list_item_1, emojis, meaning); // must match constructor!
         mListView.setAdapter ( adapter );
 
@@ -36,7 +35,7 @@ public class EmoActivity extends AppCompatActivity {
             }
         });
         Intent intent = getIntent();
-        String emoji = intent.getStringExtra("emojis");
-        mEmojiTextView.setText("Here is a list of all Emojis: " + emojis);
+        String emojis = intent.getStringExtra("emojis");
+        mEmojiTextView.setText("Here is results on : " + emojis);
     }
 }

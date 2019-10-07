@@ -36,7 +36,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/emojisEditText"
+        android:id="@+id/emojisTextView"
         android:background="@color/colorPrimary"
         android:layout_above="@+id/findEmojisButton"
         android:layout_marginBottom="10dp"

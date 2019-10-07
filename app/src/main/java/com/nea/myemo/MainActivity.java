@@ -15,10 +15,8 @@ import butterknife.ButterKnife;
   public class MainActivity extends AppCompatActivity implements View.OnClickListener {
       @BindView(R.id.findEmojisButton)
       Button mFindEmojisButton;
-      @BindView(R.id.emojisEditText)
-      EditText mEmojiEditText;
-      @BindView(R.id.appNameTextView)
-      TextView mAppNameTextView;
+      @BindView(R.id.emojisTextView)
+      EditText mEmojisTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +30,11 @@ import butterknife.ButterKnife;
       @Override
       public void onClick(View v) {
           if (v == mFindEmojisButton) {
-              String emojis = mEmojiEditText.getText ().toString ();
+              String emojis = mEmojisTextView.getText ().toString ();
               Intent intent = new Intent ( MainActivity.this, EmoActivity.class );
               intent.putExtra ( "emojis", emojis );
               startActivity ( intent );
           }
       }
-}
+
+  }

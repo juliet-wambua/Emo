@@ -2,12 +2,15 @@ package com.nea.myemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 
 public class SplashscreenActivity extends AppCompatActivity {
+
+    private static int SPLASH_TIME_OUT = 5000;
     private ImageView container;
     private AnimationDrawable animationDrawable;
     @Override
@@ -17,6 +20,14 @@ public class SplashscreenActivity extends AppCompatActivity {
         container = findViewById(R.id.iv_icons);
         container.setBackgroundResource(R.drawable.splash_animation);
         animationDrawable = (AnimationDrawable) container.getBackground();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(SplashscreenActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        }, SPLASH_TIME_OUT);
     }
     @Override
     protected void onResume() {

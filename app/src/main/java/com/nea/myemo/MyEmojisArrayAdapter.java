@@ -14,16 +14,17 @@ public class MyEmojisArrayAdapter extends ArrayAdapter {
         this.mEmojis = mEmojis;
         this.mMeaning = mMeaning;
     }
+
     @Override
     public Object getItem(int position) {
-        String restaurant = mEmojis[position];
-        String cuisine = mMeaning[position];
-        return String.format("%s \nServes great: %s", restaurant, cuisine);
+        String emojis = mEmojis[position];
+        String meaning = mMeaning[position];
+        return String.format("%s \nServes great: %s", emojis, meaning);
     }
 
     @Override
     public int getCount() {
-        return mEmojis.length;
+        return mMeaning.length;
     }
 
 }
