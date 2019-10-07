@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 
 public class EmoActivity extends AppCompatActivity {
     @BindView( R.id.emojisEditText )
-    TextView mLocationTextView;
+    TextView mEmojiTextView;
     @BindView ( R.id.listView )
     ListView mListView;
     private String[] emojis = new String[] {"Smiley", "Wink", "Wink with tongue out", "Love eyes", "Hi5 hand", "Love eyes wink"};
@@ -35,12 +35,12 @@ public class EmoActivity extends AppCompatActivity {
         mListView.setOnItemClickListener ( new AdapterView.OnItemClickListener () {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String restaurant = ((TextView)view).getText().toString();
-                Toast.makeText(EmoActivity.this, restaurant, Toast.LENGTH_LONG).show();
+                String emojis = ((TextView)view).getText().toString();
+                Toast.makeText(EmoActivity.this, emojis, Toast.LENGTH_LONG).show();
             }
         });
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
-        mLocationTextView.setText("Here is a list of all Emojis: " + emojis);
+        mEmojiTextView.setText("Here is a list of all Emojis: " + emojis);
     }
 }
