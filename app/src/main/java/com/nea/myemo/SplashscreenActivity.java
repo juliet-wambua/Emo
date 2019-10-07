@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class SplashscreenActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 5000;
+    private static int SPLASH_TIME_OUT = 2000;
     private ImageView container;
     private AnimationDrawable animationDrawable;
     @Override
@@ -33,7 +33,7 @@ public class SplashscreenActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         animationDrawable.start();
-        checkAnimationStatus(150, animationDrawable);
+        checkAnimationStatus(200, animationDrawable);
     }
     /**
      * check the animation status recursively, keep the animation until it reach the last frame.
