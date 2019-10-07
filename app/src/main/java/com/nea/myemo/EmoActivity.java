@@ -13,7 +13,7 @@ public class EmoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
+        setContentView(R.layout.activity_splashscreen);
         container = findViewById(R.id.iv_icons);
         container.setBackgroundResource(R.drawable.splash_animation);
         animationDrawable = (AnimationDrawable) container.getBackground();
