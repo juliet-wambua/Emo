@@ -2,17 +2,21 @@
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
   public class MainActivity extends AppCompatActivity implements View.OnClickListener {
       @BindView(R.id.findEmojisButton)
-      Button mFindRestaurantsButton;
+      Button mFindEmojisButton;
       @BindView(R.id.emojiEditText)
-      EditText mLocationEditText;
+      EditText mEmojiEditText;
       @BindView(R.id.appNameTextView)
       TextView mAppNameTextView;
 
@@ -22,5 +26,16 @@ import android.widget.TextView;
         setContentView ( R.layout.activity_main );
         ButterKnife.bind ( this );
 
+        mFindEmojisButton.setOnClickListener ( this );
     }
+
+      @Override
+      public void onClick(View v) {
+          if (v == mFindEmojisButton) {
+              String location = mEmojiEditText.getText ().toString ();
+              Intent intent = new Intent ( MainActivity.this, EmoActivity.class );
+              intent.putExtra ( "emo", emo );
+              startActivity ( intent );
+          }
+      }
 }
