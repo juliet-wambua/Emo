@@ -1,14 +1,10 @@
 package com.nea.myemo;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,7 +36,7 @@ public class EmoActivity extends AppCompatActivity {
             }
         });
         Intent intent = getIntent();
-        String location = intent.getStringExtra("location");
+        String emoji = intent.getStringExtra("emojis");
         mEmojiTextView.setText("Here is a list of all Emojis: " + emojis);
     }
 }

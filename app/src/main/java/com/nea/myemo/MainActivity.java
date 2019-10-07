@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
       @Override
       public void onClick(View v) {
           if (v == mFindEmojisButton) {
-              String location = mEmojiEditText.getText ().toString ();
+              String emojis = mEmojiEditText.getText ().toString ();
               Intent intent = new Intent ( MainActivity.this, EmoActivity.class );
               intent.putExtra ( "emojis", emojis );
               startActivity ( intent );
