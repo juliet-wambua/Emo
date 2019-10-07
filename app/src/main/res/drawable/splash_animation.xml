@@ -3,7 +3,7 @@
     android:id="@+id/animation_list_splash"
     android:oneshot="false">
     <item
-        android:drawable="@drawable/SirSmiley"
+        android:drawable="@drawable/sir_smiley"
         android:duration="250" />
     <item
         android:drawable="@drawable/smile"
@@ -12,7 +12,7 @@
         android:drawable="@drawable/blush"
         android:duration="250" />
     <item
-        android:drawable="@drawable/winkTOut"
+        android:drawable="@drawable/wink_tang_out"
         android:duration="250" />
     <item
         android:drawable="@drawable/last1"
